@@ -1,9 +1,9 @@
-gitimport '../styles/globals.css'
+import '../styles/globals.css'
 import '../styles/app.css'
 import TaskListContextProvider from "../src/services/storeContext";
 import {ThemeProvider} from "@material-ui/core/styles";
 import {CssBaseline} from "@material-ui/core";
-import theme from "../src/theme";
+import theme from "../styles/theme";
 import Head from "next/head";
 import {useEffect} from "react";
 

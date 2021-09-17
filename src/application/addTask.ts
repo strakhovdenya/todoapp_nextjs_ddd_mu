@@ -8,18 +8,18 @@ import {TodoItem} from "../domain/TudoItem";
 
 export function useAddNewTask() {
 
-    const dbStorage:DbService = useDbService();
+    const dbStorage: DbService = useDbService();
     const taskStorage: TodoListStorage = useTodoListStorage();
 
-    async function addNewTask(newContent:TodoItemContent, dueDate:DateTimeString) {
+    async function addNewTask(newContent: TodoItemContent, dueDate: DateTimeString) {
 
         const {tasks} = taskStorage;
 
-        const newTask:TodoItem = {
-            id:uuidv4(),
-            content:newContent,
-            due_date:dueDate,
-            status:false
+        const newTask: TodoItem = {
+            id: uuidv4(),
+            content: newContent,
+            due_date: dueDate,
+            status: false
         }
 
         const updatedTasks = addTask(tasks, newTask);

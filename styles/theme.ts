@@ -8,13 +8,13 @@ const theme = createTheme({
             white: '#ffffff',
         },
         primary: {
-            light: '#B3E5FC',
-            main: '#03A9F4',
-            dark: '#0288D1',
-            contrastText: '#212121',
+            light: '#ae90ef',
+            main: '#703ec2',
+            dark: '#4b04bb',
+            contrastText: '#e8e8e8',
         },
         secondary: {
-            main: '#607D8B', // omitting light and dark will calculate from main
+            main: '#6b608b', // omitting light and dark will calculate from main
             contrastText: '#757575',
         },
         grey: {
@@ -22,7 +22,7 @@ const theme = createTheme({
             '700': '#79797a',
         },
         info: {
-            main: '#1bb2f1',
+            main: '#511bf1',
         },
         success: {
             main: '#00d589',

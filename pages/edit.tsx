@@ -1,16 +1,16 @@
-import TaskListContextProvider from "../src/services/storeContext";
-import Header from "../components/Header";
-import EditForm from "../components/EditForm";
 
-export default function Home() {
+import EditForm from "../components/EditForm";
+import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Main from "../components/Main";
+
+export default function Edit() {
     return (
-            <div className="container">
-                <div className="app-wrapper">
-                    <div className="main">
-                        <Header headerTitle="Task Manager (edit)"/>
-                        <EditForm/>
-                    </div>
-                </div>
-            </div>
+        <React.Fragment>
+            <CssBaseline/>
+            <Main>
+                <EditForm/>
+            </Main>
+        </React.Fragment>
     )
 }
