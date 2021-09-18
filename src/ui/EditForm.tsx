@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
-import {useEditOneTask} from "../src/application/editTask";
-import {useEditTaskStorage} from "../src/services/storeAdaptor";
+import {useEditOneTask} from "../application/editTask";
+import {useEditTaskStorage} from "../services/storeAdaptor";
 import Router from "next/router";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";

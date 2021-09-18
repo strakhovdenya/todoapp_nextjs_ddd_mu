@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import {makeStyles} from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
@@ -9,8 +9,9 @@ import {
 } from "@material-ui/core";
 
 import Task from "./Task";
-import {useTodoListStorage} from "../src/services/storeAdaptor";
-import {TodoItem} from "../src/domain/TudoItem";
+import {useTodoListStorage} from "../services/storeAdaptor";
+import {TodoItem} from "../domain/TudoItem";
+import {useDbService} from "../services/dbAdaptor";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -19,11 +20,20 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const TaskList = () => {
+const TaskList = ({taskProp}) => {
 
     const classes = useStyles();
 
-    const {tasks} = useTodoListStorage()
+    let {tasks, saveTasks} = useTodoListStorage()
+    const {get} = useDbService();
+
+    useEffect(() => {
+        saveTasks(taskProp);
+    }, [])
+
+    if (taskProp && !tasks) {
+        tasks = taskProp;
+    }
 
     return (
         <Container maxWidth="md" className={classes.pt20}>

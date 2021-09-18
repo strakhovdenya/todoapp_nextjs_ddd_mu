@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {TodoItem} from "../src/domain/TudoItem";
-import {UniqueId} from "../src/types";
-import {useRemoveOneTask} from "../src/application/deleteTask";
-import {useStartEditTask} from "../src/application/startEditTask";
+import {TodoItem} from "../domain/TudoItem";
+import {UniqueId} from "../types";
+import {useRemoveOneTask} from "../application/deleteTask";
+import {useStartEditTask} from "../application/startEditTask";
 import Router from 'next/router'
 import {
     Checkbox,
@@ -14,7 +14,8 @@ import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
 import {makeStyles} from "@material-ui/core/styles";
-import {useChangeStatusTask} from "../src/application/changeStatus";
+import {useChangeStatusTask} from "../application/changeStatus";
+import {formattedDate} from "../lib/dateFormat";
 
 
 
@@ -109,7 +110,7 @@ const Task = ({task}: taskProps) => {
         <TableRow hover>
             <ChekBoxTableCell isChecked={task.status} id={task.id} />
 
-            <TableCell align="left" className={classes.tableCell} style={{width: 150}}>{task.due_date}</TableCell>
+            <TableCell align="left" className={classes.tableCell} style={{width: 150}}>{formattedDate(task.due_date)}</TableCell>
 
             <TableCell align="left" className={classes.tableCell}>{task.content}</TableCell>
 

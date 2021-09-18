@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useAddNewTask} from "../src/application/addTask";
+import {useAddNewTask} from "../application/addTask";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import {TextField} from "@material-ui/core";
@@ -28,7 +28,7 @@ const TaskForm = () => {
     const {addNewTask} = useAddNewTask()
 
     const [content, setContent] = useState('');
-    const [date, setDate] = useState('2020-10-01');
+    const [date, setDate] = useState('');
 
     const handleChange = (e) => {
         setContent(e.target.value);
@@ -47,7 +47,7 @@ const TaskForm = () => {
 
         await addNewTask(content, date);
         setContent("");
-        setDate("2020-10-01");
+        setDate('');
     }
 
     return (

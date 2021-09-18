@@ -4,5 +4,5 @@ export type TodoItem = {
     id: UniqueId;
     content: TodoItemContent;
     status: boolean;
-    due_date: DateTimeString;
+    due_date: DateTimeString | null;
 };

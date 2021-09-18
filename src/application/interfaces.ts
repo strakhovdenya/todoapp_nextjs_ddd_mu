@@ -9,6 +9,7 @@ export interface AuthenticationService {
 
 export interface DbService {
     save(tasks: TodoList): Promise<boolean>;
+    get(): Promise<TodoList>;
 }
 
 export interface TodoListStorage {

@@ -9,7 +9,7 @@ export const useStore = () => useContext(StoreContext);
 const TaskListContextProvider = ({children}) => {
 
 
-    const [tasks, setTasks] = useState({todos: [{id:'1',content:"qwqqwqwq", due_date:"2020-10-01", status:true}]});
+    const [tasks, setTasks] = useState();
 
     const [taskForEdit, setEditTask] = useState(null)
 
