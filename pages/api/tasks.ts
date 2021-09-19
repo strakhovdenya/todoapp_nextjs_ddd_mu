@@ -2,8 +2,10 @@
 
 import {promises as fs} from 'fs';
 import path from 'path';
+import {NextApiRequest, NextApiResponse} from "next";
 
-export default async function handler(req, res) {
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     const {
         method,
@@ -22,7 +24,7 @@ export default async function handler(req, res) {
     }
 
 
-    async function getRequest(res) {
+    async function getRequest(res: NextApiResponse) {
 
         const rawData = await fs.readFile(path.resolve(__dirname, '../../../../db/db.json'));
 
@@ -34,7 +36,7 @@ export default async function handler(req, res) {
         res.end(JSON.stringify(tasks));
     }
 
-    async function postRequest(req, res) {
+    async function postRequest(req: NextApiRequest, res: NextApiResponse) {
         const data = await fs.writeFile(path.resolve(__dirname, '../../../../db/db.json'), JSON.stringify(req.body));
 
         res.statusCode = 200;

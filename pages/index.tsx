@@ -18,12 +18,10 @@ export default function Home({taskProp}) {
     )
 }
 
-Home.getInitialProps = async ({query, req}) => {
-
+Home.getInitialProps = async () => {
     const {get} = useDbService();
 
     const taskProp = await get();
 
     return {taskProp};
-
 }
