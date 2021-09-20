@@ -1,43 +1,46 @@
-import { createTheme } from '@material-ui/core/styles';
+import {createTheme} from '@material-ui/core/styles';
+import {enUS} from "@material-ui/core/locale";
 
 // Create a theme instance.
 const theme = createTheme({
-    palette: {
-        common: {
-            black: '#19192B',
-            white: '#ffffff',
+        palette: {
+            common: {
+                black: '#19192B',
+                white: '#ffffff',
+            },
+            primary: {
+                light: '#ae90ef',
+                main: '#703ec2',
+                dark: '#4b04bb',
+                contrastText: '#e8e8e8',
+            },
+            secondary: {
+                main: '#6b608b', // omitting light and dark will calculate from main
+                contrastText: '#757575',
+            },
+            grey: {
+                '500': '#bcbcbc',
+                '700': '#79797a',
+            },
+            info: {
+                main: '#511bf1',
+            },
+            success: {
+                main: '#00d589',
+            },
+            error: {
+                main: '#832838',
+            },
+            background: {
+                default: '#fff',
+            },
         },
-        primary: {
-            light: '#ae90ef',
-            main: '#703ec2',
-            dark: '#4b04bb',
-            contrastText: '#e8e8e8',
+        typography: {
+            fontFamily: 'Roboto',
         },
-        secondary: {
-            main: '#6b608b', // omitting light and dark will calculate from main
-            contrastText: '#757575',
-        },
-        grey: {
-            '500': '#bcbcbc',
-            '700': '#79797a',
-        },
-        info: {
-            main: '#511bf1',
-        },
-        success: {
-            main: '#00d589',
-        },
-        error: {
-            main: '#832838',
-        },
-        background: {
-            default: '#fff',
-        },
+
     },
-    typography: {
-        fontFamily: 'Roboto',
-    },
-});
+    enUS);
 
 export default theme;
 

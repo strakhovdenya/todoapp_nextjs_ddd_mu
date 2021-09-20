@@ -13,6 +13,7 @@ const InputDate = ({actionOnChange, date}) => {
                     InputLabelProps={{
                         shrink: true,
                     }}
+                    lang="en-US"
                     value={date}
                     onChange={actionOnChange}
                 />
