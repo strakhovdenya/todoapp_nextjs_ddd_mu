@@ -1,35 +1,15 @@
 import React, {useState} from "react";
-
 import {useEditOneTask} from "../application/editTask";
 import {useEditTaskStorage} from "../services/storeAdaptor";
 import Router from "next/router";
 import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import Container from "@material-ui/core/Container";
-import {makeStyles} from "@material-ui/core/styles";
 import InputContent from "./form/InputContent";
 import InputDate from "./form/InputDate";
 import SubmitButton from "./form/SubmitButton";
 import OnClickButton from "./form/OnClickButton";
-
-const useStyles = makeStyles((theme) => ({
-        form: {
-            width: '100%', // Fix IE 11 issue.
-            marginTop: theme.spacing()
-        },
-        submit: {
-
-            margin: theme.spacing(3, 0, 2),
-        },
-        cardForm: {
-            padding: theme.spacing(2),
-        },
-    })
-);
+import TaskFormBase from "./form/TaskFormBase";
 
 const EditForm = () => {
-
-    const classes = useStyles();
 
     const {taskForEdit, saveEditItem} = useEditTaskStorage();
 
@@ -64,35 +44,28 @@ const EditForm = () => {
     }
 
     return (
-        <Container maxWidth="sm">
+        <TaskFormBase handleSubmit={handleSubmit}>
+            <InputContent
+                actionOnChange={handleChange}
+                content={content}
+            />
 
-            <Card className={classes.cardForm}>
-                <form className={classes.form} onSubmit={handleSubmit} noValidate>
-                    <InputContent
-                        actionOnChange={handleChange}
-                        content={content}
-                    />
+            <InputDate
+                actionOnChange={handleChangeDate}
+                date={date}
+            />
 
-                    <InputDate
-                        actionOnChange={handleChangeDate}
-                        date={date}
-                    />
+            <Grid container spacing={2} justifyContent="center">
+                <SubmitButton
+                    text="EDIT"
+                />
 
-                    <Grid container spacing={2} justifyContent="center">
-                        <SubmitButton
-                            text="EDIT"
-                        />
-
-                        <OnClickButton
-                            handleClick={handleCancel}
-                            text="CANCEL"
-                        />
-                    </Grid>
-                </form>
-            </Card>
-
-
-        </Container>
+                <OnClickButton
+                    handleClick={handleCancel}
+                    text="CANCEL"
+                />
+            </Grid>
+        </TaskFormBase>
     )
 }
 

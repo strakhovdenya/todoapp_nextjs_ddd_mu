@@ -1,6 +1,4 @@
 import React from "react";
-import Task from "./Task";
-import {TodoItem} from "../domain/TudoItem";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -28,7 +26,6 @@ const Header = ({headerTitle}: headerProps) => {
         <div className={classes.rootAppbar}>
             <AppBar className={classes.appbar} position="relative">
                 <Toolbar>
-                    {/*<CameraIcon className={classes.icon}/>*/}
                     <Typography variant="h6" color="inherit">
                         {headerText}
                     </Typography>

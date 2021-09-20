@@ -1,12 +1,7 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
 import Header from "./Header";
 
-type headerProps = {
-    headerTitle?: string;
-};
 
 const useStyles = makeStyles((theme) => ({
         content: {
